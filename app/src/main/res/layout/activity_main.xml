@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="2dp"
+        android:elevation="4dp"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/card_view"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/relative_box">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/search_icon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/search_icon"
+                />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/clear_text_icon"
+                android:layout_marginRight="10dp"
+                android:id="@+id/cancel_icon"
+                android:layout_alignParentRight="true"
+                android:visibility="invisible"
+                android:focusable="false"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/search_icon"
+                android:layout_toLeftOf="@+id/cancel_icon"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/dark_gradient_color_1"
+                android:textColorHint="@color/gray_color"
+                android:textSize="14sp"
+                android:hint="Search"
+                android:maxLines="1"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:id="@+id/search"
+                android:textCursorDrawable="@color/blue_gradient_color_1"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/card_view"/>
+
+    <ProgressBar
+        android:id="@+id/main_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        />
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true">
+    <include layout="@layout/error_layout"/>
+</RelativeLayout>
+
+
+</RelativeLayout>
